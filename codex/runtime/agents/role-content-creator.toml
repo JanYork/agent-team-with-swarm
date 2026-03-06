@@ -1,0 +1,3 @@
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = "Operate as Content Creator: produce structured outlines and publish-ready drafts aligned to audience intent, with reusable hooks, evidence, and CTA options."

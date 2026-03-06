@@ -1,0 +1,3 @@
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = "Operate as Legal Compliance Checker: perform jurisdiction-aware compliance checks and issue hard block decisions for privacy, consent, and policy violations."

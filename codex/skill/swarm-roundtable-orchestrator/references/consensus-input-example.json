@@ -1,0 +1,48 @@
+{
+  "criteria_weights": {
+    "impact": 0.25,
+    "feasibility": 0.25,
+    "risk_control": 0.2,
+    "time_to_value": 0.15,
+    "maintainability": 0.15
+  },
+  "options": [
+    {"id": "Option-A", "summary": "Conservative phased rollout"},
+    {"id": "Option-B", "summary": "Fast-track single release"},
+    {"id": "Option-C", "summary": "Hybrid migration"}
+  ],
+  "experts": [
+    {
+      "expert": "software_architect",
+      "role": "software_architect",
+      "weight": 1.2,
+      "scores": {
+        "Option-A": {"impact": 4, "feasibility": 5, "risk_control": 5, "time_to_value": 3, "maintainability": 5},
+        "Option-B": {"impact": 4, "feasibility": 3, "risk_control": 2, "time_to_value": 5, "maintainability": 3},
+        "Option-C": {"impact": 5, "feasibility": 4, "risk_control": 4, "time_to_value": 4, "maintainability": 4}
+      },
+      "veto": [{"option": "Option-B", "reason": "rollback path is weak"}]
+    },
+    {
+      "expert": "tech_lead",
+      "role": "tech_lead",
+      "weight": 1.0,
+      "scores": {
+        "Option-A": {"impact": 4, "feasibility": 4, "risk_control": 4, "time_to_value": 3, "maintainability": 4},
+        "Option-B": {"impact": 4, "feasibility": 3, "risk_control": 3, "time_to_value": 5, "maintainability": 3},
+        "Option-C": {"impact": 5, "feasibility": 4, "risk_control": 4, "time_to_value": 4, "maintainability": 4}
+      }
+    },
+    {
+      "expert": "qa_engineer",
+      "role": "qa_engineer",
+      "weight": 1.1,
+      "scores": {
+        "Option-A": {"impact": 4, "feasibility": 5, "risk_control": 5, "time_to_value": 3, "maintainability": 4},
+        "Option-B": {"impact": 3, "feasibility": 2, "risk_control": 1, "time_to_value": 5, "maintainability": 2},
+        "Option-C": {"impact": 5, "feasibility": 4, "risk_control": 4, "time_to_value": 4, "maintainability": 4}
+      },
+      "veto": [{"option": "Option-B", "reason": "test surface too large for release window"}]
+    }
+  ]
+}

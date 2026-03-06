@@ -1,0 +1,47 @@
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 14
+max_depth = 2
+job_max_runtime_seconds = 1800
+
+[agents.product_manager]
+description = "Swarm+roundtable sub-agent for discovery_team. Focus: scope, acceptance criteria, prioritization."
+config_file = "agents/product_manager.toml"
+
+[agents.data_governance_specialist]
+description = "Swarm+roundtable sub-agent for design_team. Focus: data quality, lineage, privacy, and compliance controls."
+config_file = "agents/data_governance_specialist.toml"
+
+[agents.evidence_collector]
+description = "Swarm+roundtable sub-agent for assurance_team. Focus: evidence-based QA and proof collection."
+config_file = "agents/evidence_collector.toml"
+
+[agents.experiment_tracker]
+description = "Swarm+roundtable sub-agent for assurance_team. Focus: experiment lifecycle and decision discipline."
+config_file = "agents/experiment_tracker.toml"
+
+[agents.release_manager]
+description = "Swarm+roundtable sub-agent for assurance_team. Focus: release train planning, rollout safety, and rollback readiness."
+config_file = "agents/release_manager.toml"
+
+[agents.content_creator]
+description = "Swarm+roundtable sub-agent for design_team. Focus: editorial strategy and multi-format content production."
+config_file = "agents/content_creator.toml"
+
+[agents.image_prompt_engineer]
+description = "Swarm+roundtable sub-agent for design_team. Focus: structured AI image prompt engineering for publication assets."
+config_file = "agents/image_prompt_engineer.toml"
+
+[agents.social_media_strategist]
+description = "Swarm+roundtable sub-agent for build_team. Focus: cross-platform publishing strategy and campaign rhythm."
+config_file = "agents/social_media_strategist.toml"
+
+[agents.analytics_reporter]
+description = "Swarm+roundtable sub-agent for assurance_team. Focus: KPI reporting, attribution, and operational insights."
+config_file = "agents/analytics_reporter.toml"
+
+[agents.legal_compliance_checker]
+description = "Swarm+roundtable sub-agent for assurance_team. Focus: legal and regulatory compliance review for content and data operations."
+config_file = "agents/legal_compliance_checker.toml"

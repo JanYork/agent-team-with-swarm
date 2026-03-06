@@ -1,0 +1,149 @@
+# Exported from ~/.codex/config.toml
+# Scope: [features], [agents], and [agents.*] sections related to multi-agent runtime
+[features]
+plan_tool = true
+view_image_tool = true
+streamable_shell = false
+rmcp_client = true
+skills = true
+parallel = true
+unified_exec = true
+shell_snapshot = true
+steer = true
+collaboration_modes = true
+multi_agent = true
+
+[agents]
+max_threads = 14
+max_depth = 2
+job_max_runtime_seconds = 1800
+
+[agents.product_manager]
+description = "Product Manager role for PRD, scope, and prioritization"
+config_file = "agents/role-product-manager.toml"
+
+[agents.product_consultant]
+description = "Product Consultant role for business and delivery tradeoffs"
+config_file = "agents/role-product-consultant.toml"
+
+[agents.uiux_designer]
+description = "UI/UX Designer role for flows, IA, and handoff"
+config_file = "agents/role-ui-ux-designer.toml"
+
+[agents.experience_designer]
+description = "Experience Designer role for end-to-end journeys"
+config_file = "agents/role-experience-designer.toml"
+
+[agents.software_architect]
+description = "Software Architect role for architecture and tradeoffs"
+config_file = "agents/role-software-architect.toml"
+
+[agents.cto]
+description = "CTO role for technical strategy and governance"
+config_file = "agents/role-cto.toml"
+
+[agents.tech_lead]
+description = "Tech Lead role for execution quality and delivery"
+config_file = "agents/role-tech-lead.toml"
+
+[agents.frontend_engineer]
+description = "Frontend Engineer role for UI implementation"
+config_file = "agents/role-frontend-engineer.toml"
+
+[agents.backend_engineer]
+description = "Backend Engineer role for service and API implementation"
+config_file = "agents/role-backend-engineer.toml"
+
+[agents.fullstack_engineer]
+description = "Fullstack Engineer role for end-to-end implementation"
+config_file = "agents/role-fullstack-engineer.toml"
+
+[agents.qa_engineer]
+description = "QA Engineer role for testing and release gates"
+config_file = "agents/role-qa-engineer.toml"
+
+[agents.devops_engineer]
+description = "DevOps Engineer role for CI/CD and reliability"
+config_file = "agents/role-devops-engineer.toml"
+
+[agents.data_analyst]
+description = "Data Analyst role for metrics and analysis"
+config_file = "agents/role-data-analyst.toml"
+
+[agents.data_governance_specialist]
+description = "Data governance specialist for privacy, lineage, and compliance gates"
+config_file = "agents/role-data-governance-specialist.toml"
+
+[agents.release_manager]
+description = "Release manager for rollout safety, release cadence, and rollback readiness"
+config_file = "agents/role-release-manager.toml"
+
+[agents.agents_orchestrator]
+description = "Agents Orchestrator for end-to-end multi-agent pipeline, phase gates, and escalation control"
+config_file = "agents/role-agents-orchestrator.toml"
+
+
+[agents.trend_researcher]
+description = "Trend Researcher for topic discovery, market signal analysis, and opportunity framing"
+config_file = "agents/role-trend-researcher.toml"
+
+
+[agents.feedback_synthesizer]
+description = "Feedback Synthesizer for voice-of-user consolidation and priority extraction"
+config_file = "agents/role-feedback-synthesizer.toml"
+
+
+[agents.content_creator]
+description = "Content Creator for editorial planning and multi-format article production"
+config_file = "agents/role-content-creator.toml"
+
+
+[agents.visual_storyteller]
+description = "Visual Storyteller for narrative-consistent media and storyboard design"
+config_file = "agents/role-visual-storyteller.toml"
+
+
+[agents.image_prompt_engineer]
+description = "Image Prompt Engineer for high-quality AI image prompt packs and style control"
+config_file = "agents/role-image-prompt-engineer.toml"
+
+
+[agents.social_media_strategist]
+description = "Social Media Strategist for cross-channel distribution sequencing and campaign rhythm"
+config_file = "agents/role-social-media-strategist.toml"
+
+
+[agents.report_distribution_agent]
+description = "Report Distribution Agent for scheduled delivery and distribution audit traceability"
+config_file = "agents/role-report-distribution-agent.toml"
+
+
+[agents.legal_compliance_checker]
+description = "Legal Compliance Checker for privacy/legal/platform-policy gate review"
+config_file = "agents/role-legal-compliance-checker.toml"
+
+
+[agents.brand_guardian]
+description = "Brand Guardian for message consistency and brand governance checks"
+config_file = "agents/role-brand-guardian.toml"
+
+
+[agents.analytics_reporter]
+description = "Analytics Reporter for KPI dashboards, attribution, and optimization loops"
+config_file = "agents/role-analytics-reporter.toml"
+
+
+[agents.experiment_tracker]
+description = "Experiment Tracker for A/B lifecycle, statistical checks, and go/no-go decisions"
+config_file = "agents/role-experiment-tracker.toml"
+
+
+[agents.evidence_collector]
+description = "Evidence Collector for screenshot/test evidence and QA verdicts"
+config_file = "agents/role-evidence-collector.toml"
+
+
+[agents.reality_checker]
+description = "Reality Checker for final readiness gate; default verdict is NEEDS_WORK unless proof is strong"
+config_file = "agents/role-reality-checker.toml"
+

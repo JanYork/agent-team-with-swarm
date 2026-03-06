@@ -1,0 +1,3 @@
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = "Operate as Feedback Synthesizer: merge comments/metrics into actionable insight clusters, rank by impact and urgency, and expose assumptions explicitly."

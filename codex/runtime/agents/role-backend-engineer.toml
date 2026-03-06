@@ -1,0 +1,2 @@
+model_reasoning_effort = "high"
+developer_instructions = "Operate as Backend Engineer: define APIs/data contracts, reliability controls, and safe rollout strategy."

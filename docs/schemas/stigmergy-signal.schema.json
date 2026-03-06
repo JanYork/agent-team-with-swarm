@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentteamwithswarm.local/schemas/stigmergy-signal.schema.json",
+  "title": "Stigmergy Signal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "signal_id",
+    "project_id",
+    "run_id",
+    "timestamp_utc",
+    "runtime",
+    "agent_id",
+    "signal_type",
+    "emission_mode",
+    "topic",
+    "priority",
+    "confidence",
+    "ttl_seconds",
+    "tags",
+    "refs",
+    "pheromone",
+    "payload"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string",
+      "minLength": 4
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "runtime": {
+      "type": "string",
+      "enum": ["codex", "claude"]
+    },
+    "agent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signal_type": {
+      "type": "string",
+      "enum": [
+        "run.started",
+        "task.offer",
+        "task.claim",
+        "task.progress",
+        "task.blocked",
+        "artifact.published",
+        "vote.cast",
+        "verdict.final",
+        "run.closed"
+      ]
+    },
+    "emission_mode": {
+      "type": "string",
+      "enum": ["auto", "manual_debug"]
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ttl_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "maxItems": 32
+    },
+    "refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id"],
+      "properties": {
+        "parent_signal_id": { "type": "string" },
+        "trace_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "pheromone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "strength", "evaporation_half_life_seconds"],
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "strength": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evaporation_half_life_seconds": {
+          "type": "integer",
+          "minimum": 60
+        }
+      }
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

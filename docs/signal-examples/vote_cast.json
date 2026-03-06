@@ -1,0 +1,34 @@
+{
+  "signal_id": "sig_01JEXAMPLEVOTE",
+  "project_id": "agentteam-demo",
+  "run_id": "run_20260306_01",
+  "timestamp_utc": "2026-03-06T15:45:00Z",
+  "runtime": "claude",
+  "agent_id": "product_manager",
+  "signal_type": "vote.cast",
+  "emission_mode": "auto",
+  "topic": "roundtable_option_scoring",
+  "priority": "medium",
+  "confidence": 0.86,
+  "ttl_seconds": 1800,
+  "tags": ["roundtable", "vote"],
+  "refs": {
+    "trace_id": "trace_01JTRACE"
+  },
+  "pheromone": {
+    "key": "option_a",
+    "strength": 0.74,
+    "evaporation_half_life_seconds": 1800
+  },
+  "payload": {
+    "option_id": "Option-A",
+    "scores": {
+      "impact": 5,
+      "feasibility": 4,
+      "risk_control": 4,
+      "time_to_value": 3,
+      "maintainability": 4
+    },
+    "veto": []
+  }
+}

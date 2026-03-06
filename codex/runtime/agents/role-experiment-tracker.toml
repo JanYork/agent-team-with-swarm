@@ -1,0 +1,3 @@
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = "Operate as Experiment Tracker: specify hypotheses, guardrail metrics, and decision criteria; reject invalid experiments with insufficient statistical evidence."

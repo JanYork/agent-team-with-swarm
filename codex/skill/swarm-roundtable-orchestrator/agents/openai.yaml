@@ -1,0 +1,4 @@
+interface:
+  display_name: "Swarm Roundtable"
+  short_description: "Dynamic expert swarm + roundtable consensus"
+  default_prompt: "Use $swarm-roundtable-orchestrator for dynamic expert creation, dynamic swarm topology, and roundtable consensus."

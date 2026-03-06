@@ -1,0 +1,807 @@
+{
+  "generated_at": "2026-03-06T11:53:40.702572+00:00",
+  "task": "内容自动化运营：写作、配图、发布、合规、复盘",
+  "context": "融合agency-agents角色",
+  "task_type": "growth",
+  "complexity": "medium",
+  "runner": "hybrid",
+  "coordinator": "product_manager",
+  "experts": [
+    {
+      "role": "product_manager",
+      "focus": "scope, acceptance criteria, prioritization",
+      "expected_outputs": [
+        "scope_boundaries",
+        "acceptance_criteria",
+        "priority_rationale"
+      ],
+      "origin": "template",
+      "agent_type": "default"
+    },
+    {
+      "role": "data_governance_specialist",
+      "focus": "data quality, lineage, privacy, and compliance controls",
+      "expected_outputs": [
+        "data_policies",
+        "pii_controls",
+        "compliance_checks"
+      ],
+      "origin": "dynamic",
+      "agent_type": "default",
+      "trigger_hits": [
+        "合规"
+      ]
+    },
+    {
+      "role": "release_manager",
+      "focus": "release train planning, rollout safety, and rollback readiness",
+      "expected_outputs": [
+        "release_plan",
+        "rollout_gates",
+        "rollback_readiness"
+      ],
+      "origin": "dynamic",
+      "agent_type": "default",
+      "trigger_hits": [
+        "发布"
+      ]
+    },
+    {
+      "role": "content_creator",
+      "focus": "editorial strategy and multi-format content production",
+      "expected_outputs": [
+        "editorial_calendar",
+        "content_drafts",
+        "content_distribution_plan"
+      ],
+      "origin": "template",
+      "agent_type": "product_consultant"
+    },
+    {
+      "role": "image_prompt_engineer",
+      "focus": "structured AI image prompt engineering for publication assets",
+      "expected_outputs": [
+        "image_prompt_pack",
+        "negative_prompt_pack",
+        "style_variants"
+      ],
+      "origin": "template",
+      "agent_type": "uiux_designer"
+    },
+    {
+      "role": "social_media_strategist",
+      "focus": "cross-platform publishing strategy and campaign rhythm",
+      "expected_outputs": [
+        "channel_plan",
+        "campaign_schedule",
+        "distribution_metrics_plan"
+      ],
+      "origin": "template",
+      "agent_type": "product_consultant"
+    }
+  ],
+  "collaboration_modes": {
+    "primary_mode": "experts",
+    "enabled_modes": [
+      "swarm",
+      "hierarchical",
+      "dag",
+      "debate_judgement",
+      "roundtable",
+      "experts"
+    ],
+    "mode_scores": {
+      "roundtable": 2,
+      "experts": 3,
+      "debate_judgement": 1,
+      "swarm": 2,
+      "hierarchical": 0,
+      "dag": 1
+    },
+    "mode_reasons": {
+      "roundtable": [
+        "task_type:growth"
+      ],
+      "experts": [
+        "base: multi-expert collaboration baseline",
+        "task_type:growth",
+        "auto:top-ranked mode"
+      ],
+      "debate_judgement": [
+        "complexity:medium"
+      ],
+      "swarm": [
+        "task_type:growth",
+        "complexity:medium"
+      ],
+      "hierarchical": [],
+      "dag": [
+        "complexity:medium"
+      ]
+    },
+    "routing_log": [
+      "swarm: task_type:growth; complexity:medium",
+      "hierarchical: policy:default",
+      "dag: complexity:medium",
+      "debate_judgement: complexity:medium",
+      "roundtable: task_type:growth",
+      "experts: base: multi-expert collaboration baseline; task_type:growth; auto:top-ranked mode"
+    ],
+    "presets": {
+      "nexus_full": [
+        "swarm",
+        "hierarchical",
+        "dag",
+        "debate_judgement",
+        "experts"
+      ],
+      "nexus_sprint": [
+        "swarm",
+        "roundtable",
+        "experts",
+        "dag"
+      ],
+      "nexus_micro": [
+        "roundtable",
+        "experts"
+      ]
+    },
+    "selected_preset": "nexus_sprint",
+    "article_scenario_fit": [
+      {
+        "mode": "roundtable",
+        "best_for": "brainstorming / 复杂推理"
+      },
+      {
+        "mode": "experts",
+        "best_for": "高质量综合分析"
+      },
+      {
+        "mode": "debate_judgement",
+        "best_for": "逻辑推理 / 审查"
+      },
+      {
+        "mode": "swarm",
+        "best_for": "大规模并行任务"
+      },
+      {
+        "mode": "hierarchical",
+        "best_for": "复杂任务管理"
+      },
+      {
+        "mode": "dag",
+        "best_for": "工程化流程"
+      }
+    ]
+  },
+  "swarm_topology": {
+    "complexity": "medium",
+    "cells": [
+      {
+        "cell": "discovery_cell",
+        "parallel_wave": 1,
+        "goal": "clarify goals, business constraints, and option framing",
+        "roles": [
+          "product_manager"
+        ]
+      },
+      {
+        "cell": "design_cell",
+        "parallel_wave": 1,
+        "goal": "stress-test architecture and cross-cutting risks",
+        "roles": [
+          "data_governance_specialist",
+          "content_creator",
+          "image_prompt_engineer"
+        ]
+      },
+      {
+        "cell": "build_cell",
+        "parallel_wave": 2,
+        "goal": "plan implementation slices and integration details",
+        "roles": [
+          "social_media_strategist"
+        ]
+      },
+      {
+        "cell": "assurance_cell",
+        "parallel_wave": 2,
+        "goal": "define quality/release gates and rollback readiness",
+        "roles": [
+          "release_manager"
+        ]
+      }
+    ],
+    "parallel_waves": 2
+  },
+  "swarm_phases": [
+    {
+      "phase": "phase_1_divergent_swarm",
+      "goal": "parallel solution exploration and proposal generation",
+      "timebox_minutes": 20,
+      "mode": "swarm"
+    },
+    {
+      "phase": "phase_2_roundtable_critique",
+      "goal": "cross-expert critique, scoring, veto capture",
+      "timebox_minutes": 15,
+      "mode": "roundtable"
+    },
+    {
+      "phase": "phase_2b_debate_judgement",
+      "goal": "run structured debate and jury vote on finalists",
+      "timebox_minutes": 12,
+      "mode": "debate_judgement"
+    },
+    {
+      "phase": "phase_3_convergent_swarm",
+      "goal": "implement winner/hybrid with execution owners and gates",
+      "timebox_minutes": 30,
+      "mode": "experts"
+    }
+  ],
+  "generation_log": [
+    "dynamic expert added: content_creator (hits: 内容运营, 写作)",
+    "dynamic expert added: data_governance_specialist (hits: 合规)",
+    "dynamic expert added: release_manager (hits: 发布)",
+    "selection cap applied (6); dropped roles: analytics_reporter, legal_compliance_checker"
+  ],
+  "roundtable": {
+    "criteria_weights": {
+      "impact": 0.25,
+      "feasibility": 0.25,
+      "risk_control": 0.2,
+      "time_to_value": 0.15,
+      "maintainability": 0.15
+    },
+    "consensus_threshold": 0.67,
+    "hard_veto_roles": [
+      "data_governance_specialist"
+    ],
+    "round2_condition": "trigger if top option approval_ratio < threshold or hard veto exists",
+    "adjudication_mode": "debate_judgement_jury"
+  },
+  "debate_judgement": {
+    "enabled": true,
+    "rounds": 1,
+    "debaters": [
+      "release_manager",
+      "content_creator",
+      "image_prompt_engineer",
+      "social_media_strategist"
+    ],
+    "jury_roles": [
+      "product_manager",
+      "data_governance_specialist"
+    ],
+    "evidence_required": true,
+    "inconclusive_default": "FAIL",
+    "vote_policy": {
+      "method": "jury_weighted_majority",
+      "jury_vote_weight": 2,
+      "debaters_vote_weight": 1,
+      "jury_quorum": 2,
+      "tie_breaker": "product_manager"
+    },
+    "final_gate": {
+      "judge": "reality_checker",
+      "default_verdict": "NEEDS_WORK",
+      "allowed_verdicts": [
+        "READY",
+        "NEEDS_WORK",
+        "NOT_READY"
+      ]
+    },
+    "authorization_checks": [
+      "identity_valid",
+      "credential_current",
+      "scope_sufficient",
+      "delegation_chain_valid"
+    ],
+    "trigger_condition": "enable when roundtable disagreement remains high, hard veto conflicts exist, or audit-style scrutiny is required",
+    "output_schema": {
+      "claim": "string",
+      "evidence": [
+        "string"
+      ],
+      "counter_argument": "string",
+      "jury_verdict": "accept/reject/rework"
+    }
+  },
+  "hierarchical_execution": {
+    "enabled": true,
+    "director": "product_manager",
+    "managers": [
+      "data_governance_specialist",
+      "content_creator",
+      "image_prompt_engineer"
+    ],
+    "workers": [
+      "release_manager",
+      "social_media_strategist"
+    ],
+    "manager_assignments": [
+      {
+        "manager": "data_governance_specialist",
+        "workers": [
+          "release_manager"
+        ],
+        "focus": "stress-test architecture and cross-cutting risks"
+      },
+      {
+        "manager": "content_creator",
+        "workers": [
+          "social_media_strategist"
+        ],
+        "focus": "stress-test architecture and cross-cutting risks"
+      },
+      {
+        "manager": "image_prompt_engineer",
+        "workers": [],
+        "focus": "stress-test architecture and cross-cutting risks"
+      }
+    ],
+    "escalation_chain": [
+      "agents_orchestrator",
+      "studio_producer",
+      "product_manager"
+    ],
+    "delegation": {
+      "require_chain": true,
+      "must_include": [
+        "from",
+        "to",
+        "scope",
+        "expires_at"
+      ]
+    },
+    "handoff_contract": {
+      "director_to_manager": "mission boundaries, priorities, and completion gates",
+      "manager_to_worker": "concrete tasks, expected outputs, and test/evidence requirements",
+      "worker_to_manager": "execution artifacts, blockers, and verification evidence"
+    }
+  },
+  "dag_workflow": {
+    "enabled": true,
+    "nodes": [
+      {
+        "id": "discovery_cell_wave_1",
+        "kind": "swarm_cell",
+        "wave": 1,
+        "team_hint": "discovery_team",
+        "parallelizable": true
+      },
+      {
+        "id": "design_cell_wave_1",
+        "kind": "swarm_cell",
+        "wave": 1,
+        "team_hint": "design_team",
+        "parallelizable": true
+      },
+      {
+        "id": "build_cell_wave_2",
+        "kind": "swarm_cell",
+        "wave": 2,
+        "team_hint": "build_team",
+        "parallelizable": true
+      },
+      {
+        "id": "assurance_cell_wave_2",
+        "kind": "swarm_cell",
+        "wave": 2,
+        "team_hint": "assurance_team",
+        "parallelizable": true
+      },
+      {
+        "id": "roundtable_critique",
+        "kind": "decision_gate",
+        "wave": 3,
+        "team_hint": "roundtable_judges_team",
+        "parallelizable": false
+      },
+      {
+        "id": "debate_judgement",
+        "kind": "decision_gate",
+        "wave": 4,
+        "team_hint": "debate_judgement_team",
+        "parallelizable": false
+      },
+      {
+        "id": "convergent_execution",
+        "kind": "execution",
+        "wave": 5,
+        "team_hint": "delivery_team",
+        "parallelizable": false
+      }
+    ],
+    "edges": [
+      {
+        "from": "discovery_cell_wave_1",
+        "to": "build_cell_wave_2"
+      },
+      {
+        "from": "discovery_cell_wave_1",
+        "to": "assurance_cell_wave_2"
+      },
+      {
+        "from": "design_cell_wave_1",
+        "to": "build_cell_wave_2"
+      },
+      {
+        "from": "design_cell_wave_1",
+        "to": "assurance_cell_wave_2"
+      },
+      {
+        "from": "build_cell_wave_2",
+        "to": "roundtable_critique"
+      },
+      {
+        "from": "assurance_cell_wave_2",
+        "to": "roundtable_critique"
+      },
+      {
+        "from": "roundtable_critique",
+        "to": "debate_judgement"
+      },
+      {
+        "from": "debate_judgement",
+        "to": "convergent_execution"
+      }
+    ],
+    "parallel_groups": [
+      [
+        "discovery_cell_wave_1",
+        "design_cell_wave_1"
+      ],
+      [
+        "build_cell_wave_2",
+        "assurance_cell_wave_2"
+      ]
+    ],
+    "critical_path": [
+      "discovery_cell_wave_1",
+      "build_cell_wave_2",
+      "roundtable_critique",
+      "debate_judgement",
+      "convergent_execution"
+    ],
+    "max_parallel_nodes": 2,
+    "gates": {
+      "required": true
+    },
+    "parallel_join_policy": "barrier",
+    "dependency_policy": {
+      "start_condition": "upstream.qa==PASS",
+      "merge_order": "dependency_order",
+      "allow_independent_parallel": true
+    },
+    "loops": {
+      "dev_qa": {
+        "max_retries": 3,
+        "on_exhausted": "escalate"
+      }
+    }
+  },
+  "output_format": {
+    "version": "1.1.0",
+    "goal": "deterministic, auditable, and readable outputs for multi-agent collaboration",
+    "global_rules": [
+      "facts_assumptions_risks_must_be_explicit",
+      "all_decisions_require_evidence_or_test_reference",
+      "handoff_payload_is_mandatory_for_cross-agent_edges",
+      "timestamp_in_iso8601_utc"
+    ],
+    "document_layout": [
+      "01_summary",
+      "02_task_context",
+      "03_collaboration_routing",
+      "04_execution_plan",
+      "05_quality_and_risk_gates",
+      "06_next_actions",
+      "07_machine_readable_json"
+    ],
+    "templates": {
+      "handoff": {
+        "required_sections": [
+          "metadata",
+          "context",
+          "deliverable_request",
+          "quality_expectations"
+        ],
+        "required_fields": [
+          "from",
+          "to",
+          "phase",
+          "task_reference",
+          "priority",
+          "timestamp"
+        ]
+      },
+      "pipeline_status": {
+        "required_fields": [
+          "current_phase",
+          "tasks_total",
+          "tasks_completed",
+          "qa_pass_rate",
+          "blocked_tasks",
+          "pipeline_health",
+          "next_action"
+        ],
+        "pipeline_health_enum": [
+          "ON_TRACK",
+          "AT_RISK",
+          "BLOCKED"
+        ]
+      },
+      "qa_verdict": {
+        "required_fields": [
+          "task_id",
+          "attempt",
+          "verdict",
+          "evidence",
+          "issues",
+          "fix_instructions"
+        ],
+        "verdict_enum": [
+          "PASS",
+          "FAIL",
+          "NEEDS_WORK"
+        ]
+      },
+      "decision_log": {
+        "required_fields": [
+          "decision_id",
+          "options_compared",
+          "scores",
+          "vetoes",
+          "final_decision",
+          "owner",
+          "timestamp"
+        ]
+      }
+    },
+    "rendering": {
+      "bullet_style": "flat",
+      "table_preferred_for_scorecards": true,
+      "top_n_list_limit": 5,
+      "include_mode_badges": [
+        "swarm",
+        "hierarchical",
+        "dag",
+        "debate_judgement",
+        "roundtable",
+        "experts"
+      ]
+    }
+  },
+  "spawn_prompts": [
+    {
+      "role": "product_manager",
+      "agent_type": "default",
+      "origin": "template",
+      "prompt": "You are acting as product_manager. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: scope, acceptance criteria, prioritization\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"scope_boundaries\", \"acceptance_criteria\", \"priority_rationale\"]\n}\nDo not produce extra sections outside JSON."
+    },
+    {
+      "role": "data_governance_specialist",
+      "agent_type": "default",
+      "origin": "dynamic",
+      "prompt": "You are acting as data_governance_specialist. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: data quality, lineage, privacy, and compliance controls\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"data_policies\", \"pii_controls\", \"compliance_checks\"]\n}\nDo not produce extra sections outside JSON."
+    },
+    {
+      "role": "release_manager",
+      "agent_type": "default",
+      "origin": "dynamic",
+      "prompt": "You are acting as release_manager. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: release train planning, rollout safety, and rollback readiness\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"release_plan\", \"rollout_gates\", \"rollback_readiness\"]\n}\nDo not produce extra sections outside JSON."
+    },
+    {
+      "role": "content_creator",
+      "agent_type": "product_consultant",
+      "origin": "template",
+      "prompt": "You are acting as content_creator. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: editorial strategy and multi-format content production\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"editorial_calendar\", \"content_drafts\", \"content_distribution_plan\"]\n}\nDo not produce extra sections outside JSON."
+    },
+    {
+      "role": "image_prompt_engineer",
+      "agent_type": "uiux_designer",
+      "origin": "template",
+      "prompt": "You are acting as image_prompt_engineer. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: structured AI image prompt engineering for publication assets\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"image_prompt_pack\", \"negative_prompt_pack\", \"style_variants\"]\n}\nDo not produce extra sections outside JSON."
+    },
+    {
+      "role": "social_media_strategist",
+      "agent_type": "product_consultant",
+      "origin": "template",
+      "prompt": "You are acting as social_media_strategist. Mission: 内容自动化运营：写作、配图、发布、合规、复盘\nContext/constraints: 融合agency-agents角色\nOwnership focus: cross-platform publishing strategy and campaign rhythm\nReturn exactly one JSON object:\n{\n  \"proposal_id\": \"Option-X\",\n  \"summary\": \"...\",\n  \"plan\": [\"...\"],\n  \"risks\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"evidence_or_tests\": [\"...\"],\n  \"role_specific_outputs\": [\"channel_plan\", \"campaign_schedule\", \"distribution_metrics_plan\"]\n}\nDo not produce extra sections outside JSON."
+    }
+  ],
+  "roundtable_prompt": "You are in roundtable review.\nTask: 内容自动化运营：写作、配图、发布、合规、复盘\nInput: all proposal cards from experts.\nScore each option on 1-5 for criteria: impact, feasibility, risk_control, time_to_value, maintainability.\nOutput JSON only:\n{\n  \"expert\": \"<role>\",\n  \"scores\": {\n    \"Option-A\": {\"impact\": 0, \"feasibility\": 0, \"risk_control\": 0, \"time_to_value\": 0, \"maintainability\": 0}\n  },\n  \"veto\": [{\"option\": \"Option-X\", \"reason\": \"...\"}],\n  \"notes\": \"...\"\n}\nOnly use veto for severe blockers.",
+  "codex_multi_agent": {
+    "sub_agent_runtime": {
+      "max_threads": 10,
+      "max_depth": 2,
+      "job_max_runtime_seconds": 1800,
+      "feature_flag_enabled": true,
+      "mode_aware_autoscaling": true
+    },
+    "agent_teams": [
+      {
+        "team": "discovery_team",
+        "wave": 1,
+        "goal": "clarify goals, business constraints, and option framing",
+        "roles": [
+          "product_manager"
+        ]
+      },
+      {
+        "team": "design_team",
+        "wave": 1,
+        "goal": "stress-test architecture and cross-cutting risks",
+        "roles": [
+          "data_governance_specialist",
+          "content_creator",
+          "image_prompt_engineer"
+        ]
+      },
+      {
+        "team": "build_team",
+        "wave": 2,
+        "goal": "plan implementation slices and integration details",
+        "roles": [
+          "social_media_strategist"
+        ]
+      },
+      {
+        "team": "assurance_team",
+        "wave": 2,
+        "goal": "define quality/release gates and rollback readiness",
+        "roles": [
+          "release_manager"
+        ]
+      },
+      {
+        "team": "roundtable_judges_team",
+        "wave": 3,
+        "goal": "score options, apply veto policy, and finalize consensus",
+        "roles": [
+          "product_manager",
+          "data_governance_specialist"
+        ]
+      },
+      {
+        "team": "debate_arena_team",
+        "wave": 3,
+        "goal": "challenge finalist options through structured counter-arguments",
+        "roles": [
+          "release_manager",
+          "content_creator",
+          "image_prompt_engineer",
+          "social_media_strategist"
+        ]
+      },
+      {
+        "team": "debate_judgement_team",
+        "wave": 4,
+        "goal": "jury voting and final adjudication",
+        "roles": [
+          "product_manager",
+          "data_governance_specialist"
+        ]
+      },
+      {
+        "team": "director_team",
+        "wave": 0,
+        "goal": "mission steering and escalation decisions",
+        "roles": [
+          "product_manager"
+        ]
+      },
+      {
+        "team": "manager_data_governance_specialist_team",
+        "wave": 1,
+        "goal": "task decomposition and dependency management",
+        "roles": [
+          "data_governance_specialist",
+          "release_manager"
+        ]
+      },
+      {
+        "team": "manager_content_creator_team",
+        "wave": 1,
+        "goal": "task decomposition and dependency management",
+        "roles": [
+          "content_creator",
+          "social_media_strategist"
+        ]
+      },
+      {
+        "team": "manager_image_prompt_engineer_team",
+        "wave": 1,
+        "goal": "task decomposition and dependency management",
+        "roles": [
+          "image_prompt_engineer"
+        ]
+      },
+      {
+        "team": "dag_orchestrator_team",
+        "wave": 5,
+        "goal": "enforce node dependencies and orchestrate parallel execution windows",
+        "roles": [
+          "product_manager"
+        ]
+      }
+    ],
+    "role_configs": [
+      {
+        "role": "product_manager",
+        "team": "discovery_team",
+        "description": "Swarm+roundtable sub-agent for discovery_team. Focus: scope, acceptance criteria, prioritization.",
+        "config_file": "agents/product_manager.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "medium",
+        "sandbox_mode": "read-only",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"medium\"\nsandbox_mode = \"read-only\"\ndeveloper_instructions = \"\"\"\nYou are the `product_manager` sub-agent in swarm + roundtable mode.\nPrimary team: discovery_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: director.\nOwnership focus: scope, acceptance criteria, prioritization.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\nYou are part of the jury in debate mode and must issue a clear verdict.\n\"\"\"\n"
+      },
+      {
+        "role": "data_governance_specialist",
+        "team": "design_team",
+        "description": "Swarm+roundtable sub-agent for design_team. Focus: data quality, lineage, privacy, and compliance controls.",
+        "config_file": "agents/data_governance_specialist.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "high",
+        "sandbox_mode": "read-only",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"high\"\nsandbox_mode = \"read-only\"\ndeveloper_instructions = \"\"\"\nYou are the `data_governance_specialist` sub-agent in swarm + roundtable mode.\nPrimary team: design_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: manager.\nOwnership focus: data quality, lineage, privacy, and compliance controls.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\nYou are a hard-veto reviewer for safety/reliability gates and must block unsafe proposals.\nYou are part of the jury in debate mode and must issue a clear verdict.\n\"\"\"\n"
+      },
+      {
+        "role": "release_manager",
+        "team": "assurance_team",
+        "description": "Swarm+roundtable sub-agent for assurance_team. Focus: release train planning, rollout safety, and rollback readiness.",
+        "config_file": "agents/release_manager.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "medium",
+        "sandbox_mode": "read-only",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"medium\"\nsandbox_mode = \"read-only\"\ndeveloper_instructions = \"\"\"\nYou are the `release_manager` sub-agent in swarm + roundtable mode.\nPrimary team: assurance_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: worker.\nOwnership focus: release train planning, rollout safety, and rollback readiness.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\n\"\"\"\n"
+      },
+      {
+        "role": "content_creator",
+        "team": "design_team",
+        "description": "Swarm+roundtable sub-agent for design_team. Focus: editorial strategy and multi-format content production.",
+        "config_file": "agents/content_creator.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "medium",
+        "sandbox_mode": "read-only",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"medium\"\nsandbox_mode = \"read-only\"\ndeveloper_instructions = \"\"\"\nYou are the `content_creator` sub-agent in swarm + roundtable mode.\nPrimary team: design_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: manager.\nOwnership focus: editorial strategy and multi-format content production.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\n\"\"\"\n"
+      },
+      {
+        "role": "image_prompt_engineer",
+        "team": "design_team",
+        "description": "Swarm+roundtable sub-agent for design_team. Focus: structured AI image prompt engineering for publication assets.",
+        "config_file": "agents/image_prompt_engineer.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "medium",
+        "sandbox_mode": "read-only",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"medium\"\nsandbox_mode = \"read-only\"\ndeveloper_instructions = \"\"\"\nYou are the `image_prompt_engineer` sub-agent in swarm + roundtable mode.\nPrimary team: design_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: manager.\nOwnership focus: structured AI image prompt engineering for publication assets.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\n\"\"\"\n"
+      },
+      {
+        "role": "social_media_strategist",
+        "team": "build_team",
+        "description": "Swarm+roundtable sub-agent for build_team. Focus: cross-platform publishing strategy and campaign rhythm.",
+        "config_file": "agents/social_media_strategist.toml",
+        "model": "gpt-5.4",
+        "model_reasoning_effort": "medium",
+        "sandbox_mode": "inherit",
+        "content": "model = \"gpt-5.4\"\nmodel_reasoning_effort = \"medium\"\ndeveloper_instructions = \"\"\"\nYou are the `social_media_strategist` sub-agent in swarm + roundtable mode.\nPrimary team: build_team.\nEnabled collaboration modes: swarm, hierarchical, dag, debate_judgement, roundtable, experts.\nHierarchy role: worker.\nOwnership focus: cross-platform publishing strategy and campaign rhythm.\nOutput must be concise, structured, and evidence-backed.\nStay within your ownership boundary and avoid rewriting other roles.\nTag uncertain statements as assumptions.\n\"\"\"\n"
+      }
+    ],
+    "config_toml": "[features]\nmulti_agent = true\n\n[agents]\nmax_threads = 10\nmax_depth = 2\njob_max_runtime_seconds = 1800\n\n[agents.product_manager]\ndescription = \"Swarm+roundtable sub-agent for discovery_team. Focus: scope, acceptance criteria, prioritization.\"\nconfig_file = \"agents/product_manager.toml\"\n\n[agents.data_governance_specialist]\ndescription = \"Swarm+roundtable sub-agent for design_team. Focus: data quality, lineage, privacy, and compliance controls.\"\nconfig_file = \"agents/data_governance_specialist.toml\"\n\n[agents.release_manager]\ndescription = \"Swarm+roundtable sub-agent for assurance_team. Focus: release train planning, rollout safety, and rollback readiness.\"\nconfig_file = \"agents/release_manager.toml\"\n\n[agents.content_creator]\ndescription = \"Swarm+roundtable sub-agent for design_team. Focus: editorial strategy and multi-format content production.\"\nconfig_file = \"agents/content_creator.toml\"\n\n[agents.image_prompt_engineer]\ndescription = \"Swarm+roundtable sub-agent for design_team. Focus: structured AI image prompt engineering for publication assets.\"\nconfig_file = \"agents/image_prompt_engineer.toml\"\n\n[agents.social_media_strategist]\ndescription = \"Swarm+roundtable sub-agent for build_team. Focus: cross-platform publishing strategy and campaign rhythm.\"\nconfig_file = \"agents/social_media_strategist.toml\"\n"
+  },
+  "symphony_fusion": {
+    "workflow_md": "---\ntracker:\n  kind: linear\n  project_slug: \"replace-with-linear-project-slug\"\n  active_states:\n    - \"Todo\"\n    - \"In Progress\"\n    - \"Rework\"\n    - \"Merging\"\n  terminal_states:\n    - \"Closed\"\n    - \"Cancelled\"\n    - \"Canceled\"\n    - \"Duplicate\"\n    - \"Done\"\npolling:\n  interval_ms: 10000\nworkspace:\n  root: \"~/code/symphony-workspaces\"\nagent:\n  max_concurrent_agents: 10\n  max_turns: 20\ncodex:\n  command: \"codex app-server\"\n  approval_policy: \"on-failure\"\n  thread_sandbox: \"workspace-write\"\n  turn_sandbox_policy:\n    type: workspaceWrite\nswarm_roundtable:\n  enabled: true\n  task_type: \"growth\"\n  complexity: \"medium\"\n  primary_mode: \"experts\"\n  selected_preset: \"nexus_sprint\"\n  enabled_modes:\n    - \"swarm\"\n    - \"hierarchical\"\n    - \"dag\"\n    - \"debate_judgement\"\n    - \"roundtable\"\n    - \"experts\"\n  consensus_threshold: 0.67\n  debate_enabled: true\n  hierarchical_enabled: true\n  dag_enabled: true\n  output_format_version: \"1.1.0\"\n  hard_veto_roles:\n    - \"data_governance_specialist\"\n  experts:\n    - role: \"product_manager\"\n      focus: \"scope, acceptance criteria, prioritization\"\n      agent_type: \"default\"\n    - role: \"data_governance_specialist\"\n      focus: \"data quality, lineage, privacy, and compliance controls\"\n      agent_type: \"default\"\n    - role: \"release_manager\"\n      focus: \"release train planning, rollout safety, and rollback readiness\"\n      agent_type: \"default\"\n    - role: \"content_creator\"\n      focus: \"editorial strategy and multi-format content production\"\n      agent_type: \"product_consultant\"\n    - role: \"image_prompt_engineer\"\n      focus: \"structured AI image prompt engineering for publication assets\"\n      agent_type: \"uiux_designer\"\n    - role: \"social_media_strategist\"\n      focus: \"cross-platform publishing strategy and campaign rhythm\"\n      agent_type: \"product_consultant\"\n---\n\nYou are working on Linear issue `{{ issue.identifier }}`.\n\nTicket context:\n- Title: `{{ issue.title }}`\n- State: `{{ issue.state }}`\n- URL: `{{ issue.url }}`\n- Description: `{{ issue.description }}`\n\nMission:\n- Primary task: 内容自动化运营：写作、配图、发布、合规、复盘\n- Extra context: 融合agency-agents角色\n\nSwarm + Roundtable fusion policy (must follow):\n1. Follow front matter `primary_mode` + `enabled_modes` for routing and handoffs.\n2. Run a divergent swarm phase and produce at least 2 concrete implementation options.\n3. Evaluate options with explicit expert viewpoints:\n- `product_manager` (scope, acceptance criteria, prioritization)\n- `data_governance_specialist` (data quality, lineage, privacy, and compliance controls)\n- `release_manager` (release train planning, rollout safety, and rollback readiness)\n- `content_creator` (editorial strategy and multi-format content production)\n- `image_prompt_engineer` (structured AI image prompt engineering for publication assets)\n- `social_media_strategist` (cross-platform publishing strategy and campaign rhythm)\n4. Run a structured roundtable scorecard over criteria:\n- `impact` weight `0.25`\n- `feasibility` weight `0.25`\n- `risk_control` weight `0.2`\n- `time_to_value` weight `0.15`\n- `maintainability` weight `0.15`\n5. Respect hard veto roles from front matter `swarm_roundtable.hard_veto_roles`.\n6. If debate mode is enabled, run jury adjudication before final convergence.\n7. If top options are too close or vetoed, run a second short roundtable on finalists.\n8. Converge to one plan (or justified hybrid), execute, then report evidence.\n\nRequired output discipline:\n- Keep an auditable decision log in repo artifacts or ticket comments.\n- Distinguish `facts`, `assumptions`, and `risks`.\n- Include tests/verification before requesting Human Review.\n- If blocked by missing permissions/secrets, report blocker precisely.\n",
+    "warnings": [
+      "symphony_project_slug_missing: set --symphony-project-slug before production use"
+    ],
+    "summary": {
+      "project_slug": "replace-with-linear-project-slug",
+      "poll_interval_ms": 10000,
+      "max_concurrent_agents": 10,
+      "max_turns": 20
+    }
+  }
+}

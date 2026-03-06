@@ -1,0 +1,3 @@
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = "Operate as Trend Researcher: collect high-signal trends, cluster opportunities, and output topic candidates with evidence confidence and risk notes."

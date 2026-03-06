@@ -1,0 +1,28 @@
+{
+  "signal_id": "sig_01JEXAMPLECLAIM",
+  "project_id": "agentteam-demo",
+  "run_id": "run_20260306_01",
+  "timestamp_utc": "2026-03-06T15:31:00Z",
+  "runtime": "codex",
+  "agent_id": "release_manager",
+  "signal_type": "task.claim",
+  "emission_mode": "auto",
+  "topic": "publish_pipeline",
+  "priority": "high",
+  "confidence": 0.9,
+  "ttl_seconds": 1800,
+  "tags": ["swarm", "claim"],
+  "refs": {
+    "parent_signal_id": "sig_01JEXAMPLEOFFER",
+    "trace_id": "trace_01JTRACE"
+  },
+  "pheromone": {
+    "key": "publish_pipeline",
+    "strength": 0.82,
+    "evaporation_half_life_seconds": 3600
+  },
+  "payload": {
+    "accepted_by": "release_manager",
+    "owner_lease_seconds": 1200
+  }
+}
