@@ -149,7 +149,6 @@ AgentTeamWithSwarm/
 - 命令规范：[docs/COMMANDS.md](docs/COMMANDS.md)
 - 蜂群信号机制：[docs/STIGMERGY_SIGNALS.md](docs/STIGMERGY_SIGNALS.md)
 - 来源说明：[docs/SOURCES.md](docs/SOURCES.md)
-- 开源审查：[docs/OPEN_SOURCE_REVIEW.md](docs/OPEN_SOURCE_REVIEW.md)
 
 ## License
 
